@@ -99,6 +99,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="R3f-21-MjO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EMJ-Jn-pyA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -120,15 +121,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="69K-l0-FET">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="498"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="69K-l0-FET" firstAttribute="leading" secondItem="RLd-45-OEY" secondAttribute="leading" id="4gY-K2-cjl"/>
-                            <constraint firstItem="69K-l0-FET" firstAttribute="top" secondItem="RLd-45-OEY" secondAttribute="top" id="AWr-vF-Mh1"/>
+                            <constraint firstItem="69K-l0-FET" firstAttribute="top" secondItem="RLd-45-OEY" secondAttribute="top" constant="60" id="AWr-vF-Mh1"/>
                             <constraint firstAttribute="trailing" secondItem="69K-l0-FET" secondAttribute="trailing" id="g4g-I7-qT1"/>
-                            <constraint firstItem="6Kn-iO-r5r" firstAttribute="bottom" secondItem="69K-l0-FET" secondAttribute="bottom" id="mA4-TG-379"/>
+                            <constraint firstItem="6Kn-iO-r5r" firstAttribute="bottom" secondItem="69K-l0-FET" secondAttribute="bottom" constant="60" id="mA4-TG-379"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Kn-iO-r5r"/>
                     </view>
