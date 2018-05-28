@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ImageRecognitionVC.swift
 //  meetup_1-2
 //
 //  Created by Nilson Nascimento on 5/14/18.
@@ -9,7 +9,7 @@
 import UIKit
 import Vision
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class ImageRecognitionVC: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var confidenceLabel: UILabel!
     @IBOutlet weak var classificationLabel: UILabel!
@@ -45,7 +45,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 
 } 
 
-extension ViewController: UIImagePickerControllerDelegate {
+extension ImageRecognitionVC: UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
