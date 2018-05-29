@@ -28,7 +28,7 @@ class TextRecognitionVC: UIViewController {
         // session output
         captureSession.sessionPreset = .photo
         let output = AVCaptureVideoDataOutput()
-        output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)] // kCVPixelFormatType_32RGBA
+        output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
         output.setSampleBufferDelegate(self, queue: DispatchQueue.global())
         
         captureSession.addInput(input)
@@ -48,6 +48,8 @@ class TextRecognitionVC: UIViewController {
                 self.highlightWords(textObservations: results)
             }
         }
+        
+        textDetectionRequest.reportCharacterBoxes = true
     }
     
     func highlightWords(textObservations: [VNTextObservation]) {
@@ -55,6 +57,19 @@ class TextRecognitionVC: UIViewController {
             let border = CALayer()
             border.borderWidth = 2.0
             border.borderColor = UIColor.red.cgColor
+            border.frame = transformedFrame(frame: result.boundingBox)
+            
+            imageView.layer.addSublayer(border)
+            
+            highlightCharacters(textObservations: result.characterBoxes ?? [])
+        }
+    }
+    
+    func highlightCharacters(textObservations: [VNRectangleObservation]) {
+        for result in textObservations {
+            let border = CALayer()
+            border.borderWidth = 1.0
+            border.borderColor = UIColor.blue.cgColor
             border.frame = transformedFrame(frame: result.boundingBox)
             
             imageView.layer.addSublayer(border)
